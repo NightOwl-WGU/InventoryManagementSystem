@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="548.0" prefWidth="879.0" style="-fx-border-radius: 15; -fx-border-color: blue; -fx-border-insets: 15;" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ModifyProductController">
+    <children>
+        <VBox prefHeight="495.0" prefWidth="311.0">
+            <children>
+                <Label prefHeight="130.0" prefWidth="246.0" text="     Modify Product">
+                    <font>
+                        <Font name="System Bold" size="20.0" />
+                    </font>
+                </Label>
+                <HBox prefHeight="47.0" prefWidth="311.0">
+                    <children>
+                        <Label prefHeight="27.0" prefWidth="62.0" text="ID">
+                            <font>
+                                <Font name="System Bold" size="18.0" />
+                            </font>
+                        </Label>
+                        <TextField fx:id="id_TB" disable="true" editable="false" prefHeight="27.0" prefWidth="149.0" />
+                    </children>
+                    <padding>
+                        <Insets left="10.0" top="10.0" />
+                    </padding>
+                </HBox>
+                <HBox prefHeight="47.0" prefWidth="311.0">
+                    <children>
+                        <Label prefHeight="27.0" prefWidth="62.0" text="Name">
+                            <font>
+                                <Font name="System Bold" size="18.0" />
+                            </font>
+                        </Label>
+                        <TextField fx:id="name_TB" prefHeight="27.0" prefWidth="149.0" promptText="Add Product Name" />
+                    </children>
+                    <padding>
+                        <Insets left="10.0" top="10.0" />
+                    </padding>
+                </HBox>
+                <HBox prefHeight="47.0" prefWidth="311.0">
+                    <children>
+                        <Label prefHeight="27.0" prefWidth="62.0" text="Inv.">
+                            <font>
+                                <Font name="System Bold" size="18.0" />
+                            </font>
+                        </Label>
+                        <TextField fx:id="inv_TB" prefHeight="27.0" prefWidth="66.0" promptText="Inv. Level" />
+                    </children>
+                    <padding>
+                        <Insets left="10.0" top="10.0" />
+                    </padding>
+                </HBox>
+                <HBox prefHeight="47.0" prefWidth="311.0">
+                    <children>
+                        <Label prefHeight="27.0" prefWidth="62.0" text="Price">
+                            <font>
+                                <Font name="System Bold" size="18.0" />
+                            </font>
+                        </Label>
+                        <TextField fx:id="price_TB" prefHeight="27.0" prefWidth="66.0" promptText="Price Part" />
+                    </children>
+                    <padding>
+                        <Insets left="10.0" top="10.0" />
+                    </padding>
+                </HBox>
+                <HBox prefHeight="47.0" prefWidth="311.0">
+                    <children>
+                        <Label prefHeight="27.0" prefWidth="62.0" text="Max">
+                            <font>
+                                <Font name="System Bold" size="18.0" />
+                            </font>
+                        </Label>
+                        <TextField fx:id="max_TB" prefHeight="27.0" prefWidth="66.0" promptText="Max" />
+                        <Label prefHeight="27.0" prefWidth="62.0" text="Min">
+                            <font>
+                                <Font name="System Bold" size="18.0" />
+                            </font>
+                            <HBox.margin>
+                                <Insets left="20.0" />
+                            </HBox.margin>
+                        </Label>
+                        <TextField fx:id="min_TB" prefHeight="27.0" prefWidth="66.0" promptText="Min">
+                            <HBox.margin>
+                                <Insets />
+                            </HBox.margin></TextField>
+                    </children>
+                    <padding>
+                        <Insets left="10.0" top="10.0" />
+                    </padding>
+                </HBox>
+            </children></VBox>
+        <VBox prefHeight="495.0" prefWidth="542.0">
+            <children>
+                <HBox prefHeight="60.0" prefWidth="488.0">
+                    <children>
+                        <Button fx:id="searchButton" mnemonicParsing="false" onAction="#onSearchButton" prefWidth="89.0" text="Search">
+                            <font>
+                                <Font name="System Bold" size="14.0" />
+                            </font>
+                        </Button>
+                        <TextField fx:id="search_TB" prefHeight="30.0" prefWidth="167.0" promptText="Search Part ID or Part Name">
+                            <HBox.margin>
+                                <Insets left="25.0" />
+                            </HBox.margin>
+                        </TextField>
+                    </children>
+                    <VBox.margin>
+                        <Insets top="10.0" />
+                    </VBox.margin>
+                    <padding>
+                        <Insets left="80.0" top="12.0" />
+                    </padding>
+                </HBox>
+                <TableView fx:id="partsTable1" layoutX="22.0" layoutY="48.0" prefHeight="149.0" prefWidth="396.0">
+                    <columns>
+                        <TableColumn fx:id="partId1" prefWidth="82.99999845027924" text="Part ID" />
+                        <TableColumn fx:id="partName1" prefWidth="174.2000503540039" text="Part Name" />
+                        <TableColumn fx:id="partInv1" prefWidth="102.39996337890625" text="Inventory Level" />
+                        <TableColumn fx:id="partPrice1" prefWidth="131.20001220703125" text="Price/Cost per Unit" />
+                    </columns>
+                </TableView>
+                <Button fx:id="addButton" alignment="CENTER" mnemonicParsing="false" onAction="#onAddButton" prefWidth="89.0" text="Add" textAlignment="RIGHT">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                    <VBox.margin>
+                        <Insets bottom="8.0" left="380.0" top="8.0" />
+                    </VBox.margin>
+                </Button>
+                <TableView fx:id="partsTable2" layoutX="22.0" layoutY="48.0" prefHeight="149.0" prefWidth="488.0">
+                    <columns>
+                        <TableColumn fx:id="partId2" prefWidth="82.99999845027924" text="Part ID" />
+                        <TableColumn fx:id="partName2" prefWidth="174.2000503540039" text="Part Name" />
+                        <TableColumn fx:id="partInv2" prefWidth="102.39996337890625" text="Inventory Level" />
+                        <TableColumn fx:id="partPrice2" prefWidth="131.20001220703125" text="Price/Cost per Unit" />
+                    </columns>
+                </TableView>
+                <Button fx:id="deleteButton" alignment="CENTER" mnemonicParsing="false" onAction="#onDeleteButton" prefWidth="89.0" text="Delete" textAlignment="RIGHT">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                    <VBox.margin>
+                        <Insets left="380.0" top="8.0" />
+                    </VBox.margin>
+                </Button>
+                <HBox prefHeight="41.0" prefWidth="488.0">
+                    <children>
+                        <Button fx:id="saveProductButton" alignment="BOTTOM_CENTER" mnemonicParsing="false" onAction="#onSaveButton" prefWidth="89.0" text="Save">
+                            <font>
+                                <Font name="System Bold" size="14.0" />
+                            </font>
+                            <HBox.margin>
+                                <Insets left="281.0" right="10.0" />
+                            </HBox.margin>
+                        </Button>
+                        <Button fx:id="cancelButton" alignment="BOTTOM_CENTER" mnemonicParsing="false" onAction="#onCancelButton" prefWidth="89.0" text="Cancel">
+                            <font>
+                                <Font name="System Bold" size="14.0" />
+                            </font>
+                            <HBox.margin>
+                                <Insets />
+                            </HBox.margin>
+                        </Button>
+                    </children>
+                    <VBox.margin>
+                        <Insets top="10.0" />
+                    </VBox.margin>
+                </HBox>
+
+            </children>
+            <padding>
+                <Insets bottom="10.0" left="10.0" right="30.0" top="10.0" />
+            </padding>
+        </VBox>
+    </children>
+    <padding>
+        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+    </padding>
+    <opaqueInsets>
+        <Insets />
+    </opaqueInsets>
+</HBox>
